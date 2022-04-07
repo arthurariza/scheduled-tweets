@@ -1,3 +1,6 @@
 class MainController < ApplicationController
-  def index; end
+  def index
+    flash[:notice] = 'Hello From Notice'
+    flash[:alert] = 'Hello From Alert'
+  end
 end
