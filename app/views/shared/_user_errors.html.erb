@@ -1,0 +1,9 @@
+<% if @user.errors.any? %>
+  <ul class="list-group mb-3">
+    <% @user.errors.full_messages.each do |m| %>
+      <li class="list-group-item list-group-item-danger">
+        <%= m %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
