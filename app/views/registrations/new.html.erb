@@ -1,4 +1,4 @@
-<h1 class="mb-3">Sign Up</h1>
+<h1 class="my-3">Sign Up</h1>
 
 <%= form_with model: @user, url: sign_up_path do |form| %>
   <%= render 'shared/user_errors' %>
@@ -16,6 +16,14 @@
     <%= form.password_field :password_confirmation, class: 'form-control' %>
   </div>
   <div class="mb-3">
-    <%= form.submit class: 'btn btn-primary btn-lg' %>
+    <%= form.submit "Submit", class: 'btn btn-primary btn-lg' %>
   </div>
 <% end %>
+
+<div>
+  <p>Already have an account?
+    <span>
+      <%= link_to "Sign In", sign_in_path, class: 'text-primary' %>
+    </span>
+  </p>
+</div>
