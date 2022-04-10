@@ -2,11 +2,10 @@ class PasswordsController < ApplicationController
   before_action :require_user_logged_in!, only: [:edit, :update]
 
   def edit
-    Current.user
   end
 
   def update
-    if Current.user.update(password_params)
+    if Current.user.authenticate(password_params[:old_password]) && Current.user.update({ password: password_params[:password], password_confirmation: password_params[:password_confirmation] })
       redirect_to root_path, notice: "Password Updated"
     else
       render :edit
@@ -16,6 +15,6 @@ class PasswordsController < ApplicationController
   private
 
   def password_params
-    params.require(:user).permit(:password, :password_confirmation)
+    params.require(:user).permit(:password, :password_confirmation, :old_password)
   end
 end

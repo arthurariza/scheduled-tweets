@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post "sign_up", to: "registrations#create"
 
   # Password
-  get "password", to: "passwords#edit", as: "edit_password"
+  get "password", to: "passwords#edit"
   patch "password", to: "passwords#update"
 
   # Sign In

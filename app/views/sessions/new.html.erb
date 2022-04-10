@@ -1,6 +1,6 @@
 <h1 class="my-3">Sign In</h1>
 
-<%= form_with model: @user, url: sign_in_path do |f| %>
+<%= form_with model: @user, url: sign_in_path, method: :post do |f| %>
 
   <div class="mb-3">
     <%= f.label :email %>
