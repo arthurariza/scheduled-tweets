@@ -3,26 +3,26 @@ Rails.application.routes.draw do
   root 'main#index'
 
   # Sign Up
-  get "sign_up", to: "registrations#new"
-  post "sign_up", to: "registrations#create"
+  get 'sign_up', to: 'registrations#new'
+  post 'sign_up', to: 'registrations#create'
 
   # Password
-  get "password", to: "passwords#edit"
-  patch "password", to: "passwords#update"
+  get 'password', to: 'passwords#edit'
+  patch 'password', to: 'passwords#update'
 
   # Sign In
-  get "sign_in", to: "sessions#new"
-  post "sign_in", to: "sessions#create"
-  delete "logout", to: "sessions#destroy"
+  get 'sign_in', to: 'sessions#new'
+  post 'sign_in', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
 
   # Password Reset
-  get "password/reset", to: "password_resets#new"
-  post "password/reset", to: "password_resets#create"
-  get "password/reset/edit", to: "password_resets#edit"
-  patch "password/reset/edit", to: "password_resets#update"
+  get 'password/reset', to: 'password_resets#new'
+  post 'password/reset', to: 'password_resets#create'
+  get 'password/reset/edit', to: 'password_resets#edit'
+  patch 'password/reset/edit', to: 'password_resets#update'
 
   # Twitter
-  get "/auth/twitter/callback", to: "omniauth_callbacks#twitter"
+  get '/auth/twitter/callback', to: 'omniauth_callbacks#twitter'
 
   # About
   get 'about', to: 'about#index'
